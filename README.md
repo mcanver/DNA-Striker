@@ -1,4 +1,4 @@
-﻿# DNA-Striker
+﻿# DNA Striker
 
 ![DNA Striker](https://github.com/mcanver/DNA-Striker/raw/master/DNA-Striker.png)
 
