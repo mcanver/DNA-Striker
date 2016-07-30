@@ -1,0 +1,89 @@
+DNA Striker Instructions
+
+Matthew C. Canver 2016
+Send bugs or suggestions Matthew_Canver AT hms DOT harvard DOT com
+
+Common PAM sequences:
+S. pyogenes Cas9, PAM: NGG
+S. pyogenes Cas9 variant, PAM: NGA
+S. pyogenes Cas9 variant, PAM: NGCG
+S. thermophilus ST1 Cas9, PAM: NNAGAA
+N. meningitidis Cas9, PAM: NNNNGATT
+S. aureus Cas9, PAM: NNGRRT
+S. aureus Cas9 variant, PAM: NNNRRT
+F. novicida Cpf1, PAM: TTTN
+
+Step-by-Step Instructions using .m file (requires Matlab installation):
+1. Install MATLAB software
+2. Download 'DNA_Striker_Version_1.m' from https://github.com/mcanver/DNA-Striker
+3. Create a bed file for the regions to be analyzed.
+Note: If using a three-column bed file, adjust "three_column_bed" parameter to "1" and "four_column_bed" parameter to "0". If using a four-column bed file, adjust "four_column_bed" parameter to "1" and "three_column_bed" parameter to "0". 
+4. In order to ensure that all sgRNA within a region are obtained, alter the starting coordinate by subtracting the sgRNA length and the ending coordinate by adding the sgRNA length. This ensures inclusive of guides that cut within the regions of interest but the full sgRNA sequence runs beyond the region of interest.
+Example: start coordinate: 135431355, end coordinate: 135431756. If sgRNA length is 20 base pairs, the new coordinates to be used for analysis are start coordinate 135431335 and end coordinate 135431776.
+5. Obtain the genome DNA sequences for each of the regions in the bed file in step (3). This can be easily accomplished using online tools such as Project Galaxy [Reference 1]
+Note: Project Galaxy may require subtracting one base pair from the starting coordinate to get the correct sequence. Therefore, the start coordinate 135431335 should be replaced with start coordinate 135431334 when retrieving the genomic DNA sequence (however, the start coordinate 135431335 coordinate should be used within DNA Striker)
+6. Ensure that the fasta file with genomic DNA sequences and the bed file with the altered coordinates are in the same folder as the 'DNA_Striker_Version_1.m' file
+7. Update the 'DNA_Striker_Variables.txt' to reflect your choice for all customizable parameters (see descriptions below)
+8. Run program by clicking "Run"
+
+Step-by-Step Instructions using .exe file (requires Matlab Runtime installation - does NOT require installation of Matlab):
+1. Install MATLAB Runtime software
+2. Download 'DNA_Striker_Version_1.m' from https://github.com/mcanver/DNA-Striker
+3. Create a bed file for the regions to be analyzed.
+Note: If using a three-column bed file, adjust "three_column_bed" parameter to "1" and "four_column_bed" parameter to "0". If using a four-column bed file, adjust "four_column_bed" parameter to "1" and "three_column_bed" parameter to "0". 
+4. In order to ensure that all sgRNA within a region are obtained, alter the starting coordinate by subtracting the sgRNA length and the ending coordinate by adding the sgRNA length. This ensures inclusive of guides that cut within the regions of interest but the full sgRNA sequence runs beyond the region of interest.
+Example: start coordinate: 135431355, end coordinate: 135431756. If sgRNA length is 20 base pairs, the new coordinates to be used for analysis are start coordinate 135431335 and end coordinate 135431776.
+5. Obtain the genome DNA sequences for each of the regions in the bed file in step (3). This can be easily accomplished using online tools such as Project Galaxy [Reference 1]
+Note: Project Galaxy may require subtracting one base pair from the starting coordinate to get the correct sequence. Therefore, the start coordinate 135431335 should be replaced with start coordinate 135431334 when retrieving the genomic DNA sequence (however, the start coordinate 135431335 coordinate should be used within DNA Striker)
+6. Ensure that the fasta file with genomic DNA sequences and the bed file with the altered coordinates are in the same folder as the 'DNA_Striker_Version_1.m' file
+7. Update the 'DNA_Striker_Variables.txt' to reflect your choice for all customizable parameters (see descriptions below)
+8. Run program by clicking "Run"
+
+Haplotype Analysis:
+If you want to include haplotype analysis, download haplotype VCF file from the 1000 Genomes Project using the following link (ensure VCF file is in the same folder as the 'DNA_Striker_Version_1.m'):
+If http://browser.1000genomes.org/Homo_sapiens/UserData/SelectSlice?db=core
+- Be sure to change "perform_haplotype_analysis" to "1" and "perform_variant_analysis" to "0"
+- Enter VCF filename in a text file without VCF extension (each VCF filename on a separate line). Enter filename "list_of_variants" parameter.  
+
+Whole Genome Sequencing or Custom Variant Analysis:
+If you want to include whole genome sequencing or custom list of variants, ensure VCF file is in the same folder as 'DNA_Striker_Version_1.m'
+- Be sure to change "perform_variant_analysis" to "1" and "perform_haplotype_analysis" to "0"
+- Enter VCF filename in a text file without VCF extension (each VCF filename on a separate line). Enter filename "list_of_variants" parameter.  
+
+Test example files to run with DNA Striker (available on https://github.com/mcanver/DNA-Striker):
+- filename.fasta
+- filename.bed 
+- VCF_filenames.txt
+- Haplotype_VCF_1.vcf
+- Haplotype_VCF_2.vcf
+- Haplotype_VCF_3.vcf
+
+Customizable Parameters (see 'DNA_Striker_Variables.txt' for example):
+starting_number = 1 % number of the first entry of your bed and fasta files (this will usually be 1 unless you only want to analyze select sequences)
+end_number = 3 % total number of sequences to be analyzed
+reference_seq_title_file = filename.fasta % filename of the fasta file with genomic sequences
+ref_sequence_info = filename.bed % filename of the bed file with coordinates
+list_of_variants = VCF_filenames.txt % filename of the text file containing the list of VCF filenames
+PAM_sequence_list = NGG % enter PAMs as NGG;NGA;NGCG for multiple entries or NGG for single entries
+sgRNA_len_list = 20 % enter sgRNA length's as 20;23;20 for multiple entries or 20 for single entries
+five_prime_PAM_list = 0 % enter 1 for 5' PAMs and 0 for 3' PAMs. enter as 0;1;0 for multiple entries or 0 for single entries 
+window_size = 100 % window size for analysis
+max_number_guide_ID_digits = 5 % maximum number of digits for sgRNA ID number
+coordinate_sys = hg19 % coordinate system chosen, enter with single quotes around it
+perform_batch_output = 1 % enter 1 to turn on batch analysis or enter 0 to turn off batch analysis
+perform_variant_analysis = 1 % enter 1 to turn on custom variant analysis or enter 0 to turn off custom variant analysis
+perform_haplotype_analysis = 0 % enter 1 to turn on haplotype analysis or enter 0 to turn off haplotype analysis
+perform_plot_analysis = 1 % enter 1 to turn on plot analysis or enter 0 to turn off plot analysis
+perform_wgs_analysis = 0 % enter 1 to turn on WGS analysis or enter 0 to turn off WGS analysis
+multiple_match_analysis = 1 % enter 1 to turn on multiple match analysis or enter 0 to turn off multiple match analysis (analyze for sgRNA matching to multiple loci within same sequence)
+individual_output = 0 % enter 1 to turn on provide individual outputs for each sequence(s) in batch analysis or enter 0 to skip individual ouputs for each sequence(s) in batch analysis
+three_column_bed = 0 % enter 1 if BED file entered as 'ref_sequence_info' has three columns: (1) chromosome, (2) start coordinate, (3) end coordinate
+four_column_bed = 1 % enter 1 if BED file entered as 'ref_sequence_info' has four columns: (1) chromosome, (2) start coordinate, (3) end coordinate, (4) other
+save_figures = 1 % enter 1 to automatically save output figures or enter 0 to skip saving figures
+ks_bandwidth = 10 % Bandwidth paramter for KS Density function (higher makes curve smoother; lower makes curve less smooth)
+output_to_excel = 1 % enter 1 to output libraries to excel or enter 0 to output analysis to a text file
+haplo_guide_freq_cutoff = 1 % enter value (0-100) to establish variant frequency cutoff for inclusion of haplotype-associated sgRNA
+twenty_extra_bases = 1 % enter 1 if included twenty extra base pairs at the ends of sequence(s) to ensure all sgRNA are obtained within interval
+
+References:
+[Reference 1] Enis Afgan, Dannon Baker, Marius van den Beek, Daniel Blankenberg, Dave Bouvier, Martin Cech, John Chilton, Dave Clements, Nate Coraor, Carl Eberhard, Björn Grüning, Aysam Guerler, Jennifer Hillman-Jackson, Greg Von Kuster, Eric Rasche, Nicola Soranzo, Nitesh Turaga, James Taylor, Anton Nekrutenko, and Jeremy Goecks. The Galaxy platform for accessible, reproducible and collaborative biomedical analyses: 2016 update. Nucleic Acids Research (2016) doi: 10.1093/nar/gkw343
