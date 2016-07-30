@@ -1,0 +1,3 @@
+Haplotype_VCF_1
+Haplotype_VCF_2
+Haplotype_VCF_3
