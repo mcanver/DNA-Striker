@@ -1,2 +1,0 @@
-Filename	Fiftieth_Percentile_Gap_Distance	Ninetieth_Percentile_Gap_Distance	Maximum_Gap_Distance
-Example_Region_2	7	32.6	39
