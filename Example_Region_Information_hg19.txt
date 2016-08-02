@@ -1,0 +1,1 @@
+chr6	135282431	135282832	Example_Region

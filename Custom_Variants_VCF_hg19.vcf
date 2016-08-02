@@ -1,0 +1,16 @@
+##fileformat=VCFv4.0							
+##source=dbSNP (ftp://ftp.ncbi.nlm.nih.gov/snp/specs/00--VCF_README.txt)							
+##variationPropertyDocumentationUrl=ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf							
+"##INFO=<ID=RSPOS,Number=1,Type=Integer,Description=""Chr position reported in dbSNP"">"							
+"##INFO=<ID=RV,Number=0,Type=Flag,Description=""RS orientation is reversed"">"							
+"##INFO=<ID=VP,Number=1,Type=String,Description=""Variation Property.  Documentation is at ftp://ftp.ncbi.nlm.nih.gov/snp/specs/dbSNP_BitField_latest.pdf"">"							
+"##INFO=<ID=GENEINFO,Number=1,Type=String,Description=""Pairs each of gene symbol:gene id.  The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)"">"							
+"##INFO=<ID=dbSNPBuildID,Number=1,Type=Integer,Description=""First dbSNP Build for RS"">"							
+"##INFO=<ID=SAO,Number=1,Type=Integer,Description=""Variant Allele Origin: 0 - unspecified, 1 - Germline, 2 - Somatic, 3 - Both"">"							
+"##INFO=<ID=VC,Number=1,Type=String,Description=""Variation Class"">"							
+"##INFO=<ID=VLD,Number=0,Type=Flag,Description=""Is Validated.  This bit is set if the variant has 2+ minor allele count based on frequency or genotype data."">"							
+#CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO							
+6	135282656	rs9389248	T	C	.	.	RSPOS=134961518;GENEINFO=10767:HBS1L;dbSNPBuildID=119;SAO=0;GMAF=0.470048;VC=snp;VLD;VP=0501008000051705003F0100
+6	135282771	rs61738492	G	A	.	.	RSPOS=134961633;GENEINFO=10767:HBS1L;dbSNPBuildID=129;SAO=0;GMAF=0.280551;VC=snp;VLD;VP=0501008000051705003E0100
+6	135282735	rs61738647	T	C	.	.	RSPOS=134961597;GENEINFO=10767:HBS1L;dbSNPBuildID=129;SAO=0;GMAF=0.26278;VC=snp;VLD;VP=0501008000051705003E0100
+6	135282497	rs74684002	T	C	.	.	RSPOS=134961359;GENEINFO=10767:HBS1L;dbSNPBuildID=131;SAO=0;GMAF=0.0223642;VC=snp;VLD;VP=050100800005150400360100
