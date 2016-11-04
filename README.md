@@ -2,7 +2,7 @@
 
 ![DNA Striker](https://github.com/mcanver/DNA-Striker/raw/master/DNA-Striker.png)
 
-DNA Striker is a computational tool for the design of variant-aware sgRNA libraries for saturating mutagenesis using one or multiple nucleases. 
+DNA Striker is a computational tool for the design of variant-aware sgRNA libraries for saturating mutagenesis using one or multiple nucleases. Example input and output files are available on this website under the "Example-Files" and "Example-Output" branches.
 
 To download the computational tool to calculate off-target scores, please visit: http://www.mhi-humangenetics.org/en/resources
 
