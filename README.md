@@ -8,7 +8,7 @@ To download the computational tool to calculate off-target scores, please visit:
 
 If you use either tool, please cite:
 
-Canver, MC., Lessard, S., Pinello, L., Ilboudo, Y., Wu, Y., Stern, EN., Needleman, A., Galactéros, F., Brugnara, C., Kutlar, A., Chen, DD., Das, PP., Kurita, R., Nakamura, Y., Yuan, GC., Lettre, G., Bauer, DE, and Orkin, SH. (2016). Variant-aware saturating mutagenesis using multiple nucleases identifies regulatory elements underlying trait-associated DNA. Submitted.
+Canver, MC., Lessard, S., Pinello, L., Ilboudo, Y., Wu, Y., Stern, EN., Needleman, A., Galactéros, F., Brugnara, C., Kutlar, A., Chen, DD., Das, PP., Kurita, R., Nakamura, Y., Yuan, GC., Lettre, G., Bauer, DE, and Orkin, SH. (2016). Variant-aware saturating mutagenesis using multiple Cas9 nucleases identifies regulatory elements at trait-associated loci. Submitted.
 
 
 
