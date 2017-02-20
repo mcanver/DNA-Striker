@@ -10,5 +10,5 @@ If you use either tool, please cite:
 
 Canver, MC., Lessard, S., Pinello, L., Ilboudo, Y., Wu, Y., Stern, EN., Needleman, A., Galactéros, F., Brugnara, C., Kutlar, A., Chen, DD., Das, PP., Cole, MA., Zeng, J., Kurita, R., Nakamura, Y., Yuan, GC., Lettre, G., Bauer, DE, and Orkin, SH. (2017). Variant-aware saturating mutagenesis using multiple Cas9 nucleases identifies regulatory elements at trait-associated loci. Nature Genetics. doi: 10.1038/ng.3793.
 
-
+Email bugs or suggestions to Matthew_Canver AT hms DOT harvard DOT com
 
